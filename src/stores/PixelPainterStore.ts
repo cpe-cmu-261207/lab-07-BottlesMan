@@ -36,15 +36,15 @@ export const RandomCell = () =>{
 }
 
 export const ChangeCellColor = (x: number , y: number) =>{
-  PixelPainterStore.update(s =>{s.canvas[y][x] = s.Pickedcolor})
+  PixelPainterStore.update(s =>{s.canvas[y][x] = s.PickedColor})
 }
 
 export const ClearColor = () =>{
   PixelPainterStore.update(s => {s.canvas = createEmptyCanvas()})
 }
 
-export const PickColor = () =>{
-  PixelPainterStore.update(s => {s.Pickedcolor = color})
+export const PickColor = (color: string) =>{
+  PixelPainterStore.update(s => {s.PickedColor = color})
 }
 
 export const PixelPainterStore = new Store<PixelPainterStoreType>({
